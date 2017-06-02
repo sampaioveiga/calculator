@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <title>Calculator</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <script src="myjs.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="panel panel-primary">
+
+        <!-- Calculator history -->
+        <div class="panel-heading">
+          <p id="calculator_history" class="text-right">&nbsp;</p>
+        </div>
+
+        <!-- calculator panel -->
+        <div class="panel-body">
+          <p id="calculator_display" class="text-right">0</p>
+        </div>
+
+        <!-- calculator numpad -->
+        <div class="panel-footer">
+
+          <!-- fifth row -->
+          <div class="row">
+            <div class="col-xs-3">
+            </div>
+            <div class="col-xs-3">
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-warning btn-block" id="button_ce">CE</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-danger btn-block" id="button_ac">AC</button>
+            </div>
+          </div>
+
+          <!-- fourth row -->
+          <div class="row">
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_7">7</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_8">8</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_9">9</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-block" id="operation_divide">÷</button>
+            </div>
+          </div>
+
+          <!-- third row -->
+          <div class="row">
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_4">4</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_5">5</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_6">6</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-block" id="operation_multiply">x</button>
+            </div>
+          </div>
+          
+          <!-- second row -->
+          <div class="row">
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block number_key" id="number_1">1</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_2">2</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_3">3</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-block" id="operation_subtract">-</button>
+            </div>
+          </div>
+
+          <!-- first row -->
+          <div class="row">
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="number_0">0</button>
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-default btn-block" id="dot">.</button>
+            </div>
+            <div class="col-xs-3">
+            </div>
+            <div class="col-xs-3">
+              <button type="button" class="btn btn-block" id="operation_add">+</button>
+            </div>
+          </div>
+
+          <div class="rows">
+            <button type="button" class="btn btn-primary btn-block" id="button_equal">=</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
