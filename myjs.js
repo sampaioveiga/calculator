@@ -5,6 +5,7 @@ var current_number = null;
 var current_operation = null;
 var previous_operation = null;
 var numbers = [];
+var decimal = 1;
 
 //display char after validation
 function displayChar(key_pressed) {
@@ -42,7 +43,19 @@ $(document).ready(function(){
 	   current_operation = null;
 	   previous_operation = null;
 	   display = [];
+       decimal = 1;
 	   $('#calculator_display').html('0');
+    });
+
+    $('#dot').click(function() {
+        if (current_number === null) {
+            return;
+        }
+        if (decimal < 1) {
+            return;
+        }
+        decimal *= 0.1;
+        displayChar('.');
     });
 		
     //number keys click
@@ -55,9 +68,11 @@ $(document).ready(function(){
             return;
         }
         if (current_number === null) {
-            current_number = key_pressed;
+            current_number = (key_pressed);
+        } else if (decimal === 1) {
+            current_number = (current_number*10) + (key_pressed);
         } else {
-            current_number = (current_number*10) + key_pressed;
+            current_number += key_pressed * decimal;
         }
         displayChar(key_pressed);
     });
@@ -66,6 +81,7 @@ $(document).ready(function(){
     $('.operation').click(function() {
         // if previous operation, do it
         // save
+        decimal = 1;
         if (current_number === null) {
             return;
         }
@@ -77,7 +93,6 @@ $(document).ready(function(){
             calculate_number();
         }
         previous_operation = current_operation;
-        console.log(numbers[0]);  //remove after
     });
 
     $('#button_equal').click(function() {
@@ -85,16 +100,15 @@ $(document).ready(function(){
             return;
         }
         numbers.push(current_number);
-        console.log('1: ' + numbers[0] + ' 2: ' + numbers[1])
         previous_operation = current_operation;
         calculate_number();
-        console.log('1: ' + numbers[0] + ' 2: ' + numbers[1])
         $('#calculator_history').append('<br />' + $('#calculator_display').html() + ' = ' + numbers[0]);
         current_number = null;
         previous_operation = null;
         current_operation = null;
         numbers = [];
         display = [];
+        decimal = 1;
         $('#calculator_display').html("0");
     });
 
