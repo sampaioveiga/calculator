@@ -1,4 +1,5 @@
 # simple calculator
 
-part of the Free Code Camp exercices,
-uploaded to codepen for show off
+HTML, CSS, JavaScript, jQuery and Bootstrap
+
+https://codepen.io/Mick_Sampras/pen/YQKzvd
